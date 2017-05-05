@@ -2,7 +2,7 @@
 /**
  * Static hero sidebar setup.
  *
- * @package understrap
+ * @package understrap-retry
  */
 
 $container   = get_theme_mod( 'understrap_container_type' );

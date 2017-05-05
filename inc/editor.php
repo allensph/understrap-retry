@@ -2,7 +2,7 @@
 /**
  * Understrap modify editor
  *
- * @package understrap
+ * @package understrap-retry
  */
 
 /**

@@ -2,7 +2,7 @@
 /**
  * Check and setup theme's default settings
  *
- * @package understrap
+ * @package understrap-retry
  *
  */
 function setup_theme_default_settings() {

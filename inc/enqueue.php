@@ -2,7 +2,7 @@
 /**
  * Understrap enqueue scripts
  *
- * @package understrap
+ * @package understrap-retry
  */
 
 if ( ! function_exists( 'understrap_scripts' ) ) {

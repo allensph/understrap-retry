@@ -2,7 +2,7 @@
 /**
  * Theme basic setup.
  *
- * @package understrap
+ * @package understrap-retry
  */
 
 require get_template_directory() . '/inc/theme-settings.php';
