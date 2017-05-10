@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /**
  * Understrap functions and definitions
  *
@@ -71,3 +74,22 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load Editor functions.
  */
 require get_template_directory() . '/inc/editor.php';
+
+/**
+ * Load Custom Breadcrumb.
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
+ * Load Post New Preset Category.
+ */
+require get_template_directory() . '/inc/post-new-preset-category.php';
+
+/**
+ * Load Options by Titan Framework.
+ */
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'titan-framework/titan-framework.php' ) ) {
+	require get_template_directory() . '/staffz/titan-framework-options.php';
+}

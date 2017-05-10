@@ -10,13 +10,14 @@
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 
-		<div class="entry-meta">
+		<!-- <div class="entry-meta">
 
-			<?php understrap_posted_on(); ?>
+			<?php //understrap_posted_on(); ?>
 
-		</div><!-- .entry-meta -->
+		</div> -->
+		<!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
 
@@ -24,6 +25,8 @@
 
 	<div class="entry-content">
 
+		<?php understrap_posted_on_altered(); ?>
+		<?php //understrap_taxonomy_link(); ?>
 		<?php the_content(); ?>
 
 		<?php
@@ -37,7 +40,7 @@
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php //understrap_entry_footer_altered(); ?>
 
 	</footer><!-- .entry-footer -->
 

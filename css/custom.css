@@ -1,0 +1,113 @@
+/****** Home page *****/
+
+.home article {
+    background: rgba(255,255,255,.8)
+}
+.home article+article {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.home .entry-header > *{
+    display: table-cell;
+    padding: 0.5rem;
+}
+.home .entry-meta {
+    width: 7rem;
+}
+.home .entry-title {
+    max-width: 35rem;
+    line-height: 1.5rem;
+}
+.home .entry-title a {
+    text-decoration: none;
+    color: #496185;
+}
+
+/***** Archive Page *****/
+
+/*-- Page Title --*/
+.category h2.page-title,
+.page h2.entry-title,
+.page-template-gmappage h2.entry-title,
+.tax-section h2.entry-title{
+    font-weight: 600;
+    display: inline-block;
+}
+
+/*--Post New Button --*/
+a.post-new-current {
+    margin-left: 1rem;
+    padding: 4px 8px;
+    position: relative;
+    top: -3px;
+    text-decoration: none;
+    border: none;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #f7f7f7;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: normal;
+    color: #0073aa;
+    cursor: pointer;
+    outline: 0;
+
+    transition-property: border,background,color;
+    transition-duration: .05s;
+    transition-timing-function: ease-in-out;
+}
+a.post-new-current:hover{
+    border-color:#008EC2;
+    background:#00a0d2;
+    color:#fff
+}
+
+/*- Post List -*/
+
+@media (min-width: 768px) {
+/*.category*/ main#main {
+    padding: 0 2.5rem;
+  } }
+.category .page-header,
+.tax-section h2.entry-title,
+.page h2.entry-title {
+    padding: 1.5rem 0;
+}
+.category article {
+    background: rgba(255,255,255,.8)
+}
+.category article+article {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.category .entry-header > *{
+    display: table-cell;
+    padding: 0.5rem;
+}
+.category .entry-meta {
+    width: 7rem;
+}
+.category .entry-title {
+    max-width: 35rem;
+    line-height: 1.5rem;
+}
+.category .entry-title a {
+    text-decoration: none;
+    color: #496185;
+}
+
+ul.pagination {
+  padding: 1.5rem 0;
+}
+@media (min-width: 768px) {
+  ul.pagination {
+    padding: 1.5rem 2.5rem;
+  } }
+
+a.page-link, span.page-link {
+    color: #496185;
+}
+.page-item.active .page-link {
+    background-color: #496185;
+    border-color: #496185;
+}

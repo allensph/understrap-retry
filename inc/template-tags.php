@@ -34,6 +34,30 @@ function understrap_posted_on() {
 }
 endif;
 
+if ( ! function_exists( 'understrap_posted_on_altered' ) ) :
+
+function understrap_posted_on_altered() {
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date( '' ) )
+	);
+	echo '<span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
+}
+endif;
+
+if ( ! function_exists( 'understrap_posted_on_home' ) ) :
+
+function understrap_posted_on_home() {
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date( 'Y m-d' ) )
+	);
+	echo '<span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
+}
+endif;
+
 if ( ! function_exists( 'understrap_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -109,3 +133,22 @@ function understrap_category_transient_flusher() {
 add_action( 'edit_category', 'understrap_category_transient_flusher' );
 add_action( 'save_post',     'understrap_category_transient_flusher' );
 
+
+
+if ( ! function_exists( 'post_new_with_current_category' ) ) :
+/**
+ * Generate a post new icon on archive page.
+ */
+function post_new_with_current_category() {
+	$categories = get_the_category();
+	$category_id = $categories[0]->cat_ID;
+
+	$user = wp_get_current_user();
+	$allowed_roles = array('editor', 'administrator', 'author');
+	if( array_intersect($allowed_roles, $user->roles ) ) {
+
+		$url = admin_url( 'post-new.php?category_id='. $category_id );
+		printf('<a class="post-new-current" href=%s>'. __('Add New Post', 'default') . '</a>', $url );
+	}
+}
+endif;
