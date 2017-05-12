@@ -168,7 +168,7 @@ add_filter('manage_staffz_posts_columns', 'staffz_reoder_columns_head');
 
 
 
-// WodPress Core Strings Handler - for Edit Staffz
+// WordPress Core Strings Handler - for Edit Staffz
 
 add_filter( 'gettext', 'staffz_core_string_handler', 10, 2 );
 function staffz_core_string_handler( $translation, $text ) {

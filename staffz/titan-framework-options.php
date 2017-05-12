@@ -958,18 +958,6 @@ function mytheme_create_options() {
 	global $titan;
 	global $theme;	
 
-	$title_section = $titan->createThemeCustomizerSection( array(
-		'id' => 'title_tagline',
-	) );
-	
-	//網站標誌
-	$title_section->createOption( array(
-		'name' => __('Site Logo', $theme),
-		'id' => 'site_logo_option',
-		'type' => 'upload',
-		'desc' => __('Upload site logo image or using default logo.', $theme),
-	) );
-
 	$header_section = $titan->createThemeCustomizerSection( array(
 		'id' => 'header_image',
 	) );
@@ -989,7 +977,8 @@ function mytheme_create_options() {
 	) );
 
 	$general_section = $titan->createThemeCustomizerSection( array(
-		'id' => 'mh_magazine_general',
+		'id' => 'understrap_general',
+		'name' => __('General Options', $theme),
 	) );
 
 	//導覽列位置指引
@@ -1013,7 +1002,8 @@ function mytheme_create_options() {
 	) );
 
 	$archives_section = $titan->createThemeCustomizerSection( array(
-		'id' => 'mh_magazine_archives_layout',
+		'id' => 'understrap_archives_layout',
+		'name' => __('Archieve Options', $theme),
 	) );
 
 	$args = array(
@@ -1069,7 +1059,8 @@ function mytheme_create_options() {
 
 
 	$sitemap_section = $titan->createThemeCustomizerSection( array(
-		'id' => 'mh_magazine_sitemap',
+		'id' => 'understrap_sitemap',
+		'name' => __('Sitemap Options', $theme),
 	) );
 	
 	function get_menus_in_array() {
@@ -1106,31 +1097,6 @@ function mytheme_create_options() {
 		'type' => 'select',
 		'options' => array( 0 => '— 選擇 —' ) + get_menus_in_array(),
 		'default' => '0',
-	) );
-
-	$layout_section = $titan->createThemeCustomizerSection( array(
-		'id' => 'mh_magazine_layout',
-	) );
-	
-	$layout_section->createOption( array(
-		'name' => __('Left Navigation Layout', $theme),
-		'id' => 'left_nav_layout',
-		'type' => 'select',
-		'options' => array(
-		'1' => sprintf(_x('Layout %d', 'options panel', $theme), 1),
-		'2' => sprintf(_x('Layout %d', 'options panel', $theme), 2),
-		),
-		'default' => '1',
-	) );
-	$layout_section->createOption( array(
-		'name' => __('Right Navigation Layout', $theme),
-		'id' => 'right_nav_layout',
-		'type' => 'select',
-		'options' => array(
-		'1' => sprintf(_x('Layout %d', 'options panel', $theme), 1),
-		'2' => sprintf(_x('Layout %d', 'options panel', $theme), 2),
-		),
-		'default' => '2',
 	) );
 }
 
