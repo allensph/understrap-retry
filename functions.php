@@ -92,4 +92,5 @@ require get_template_directory() . '/inc/post-new-preset-category.php';
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'titan-framework/titan-framework.php' ) ) {
 	require get_template_directory() . '/staffz/titan-framework-options.php';
+	require get_template_directory() . '/weblinks/titan-framework-options.php';
 }
