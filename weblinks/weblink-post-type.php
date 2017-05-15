@@ -52,7 +52,7 @@ function create_post_type_weblinks() {
 		'capability_type'     => 'page',
 		
 		// This is where we add taxonomies to our CPT
-		'taxonomies'          => array( 'linkcatagory' ),
+		'taxonomies'          => array( 'weblinkcategory' ),
 	);
 	
 	// Registering your Custom Post Type
@@ -73,11 +73,11 @@ add_action( 'init', 'create_post_type_weblinks', 0 );
 
 //hook into the init action and call create_book_taxonomies when it fires
 
-add_action( 'init', 'create_hierarchical_taxonomy_linkcatagory', 0 );
+add_action( 'init', 'create_hierarchical_taxonomy_weblinkcategory', 0 );
 
 //create a custom taxonomy name it topics for your posts
 
-function create_hierarchical_taxonomy_linkcatagory() {
+function create_hierarchical_taxonomy_weblinkcategory() {
 
     global $theme;
 
@@ -100,13 +100,13 @@ function create_hierarchical_taxonomy_linkcatagory() {
 
 // Now register the taxonomy
 
-  register_taxonomy('linkcatagory',array('weblinks'), array(
+  register_taxonomy('weblinkcategory',array('weblinks'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'show_admin_column' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'linkcatagory' ),
+    'rewrite' => array( 'slug' => 'weblinkcategory' ),
   ));
 
 }
